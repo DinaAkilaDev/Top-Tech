@@ -36,7 +36,7 @@ $link = new mysqli("localhost", "root", "", "toptech");
 if($link === false){
     die("ERROR: Could not connect. " . mysqli_connect_error());
 }
-$sql = "SELECT * FROM `departments` where id='".$id."'";
+$sql = "SELECT * FROM `department` where id='".$id."'";
 $result=$link->query($sql);
 
   while($row=$result->fetch_assoc()){

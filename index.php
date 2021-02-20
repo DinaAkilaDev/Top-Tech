@@ -68,7 +68,7 @@
           <a href="#" class="btn-learn-more">Contact Us</a>
         </div>
         <div class="col-lg-6">
-            <img src="assets/img/skills.png" class="img-fluid animated">
+            <img src="assets/img/skills.png" class="img-fluid animated" alt="img">
           </div>
       </div>
 
@@ -116,17 +116,15 @@ $link = new mysqli("localhost", "root", "", "toptech");
 if($link === false){
     die("ERROR: Could not connect. " . mysqli_connect_error());
 }
-$sql = "SELECT * FROM `departments`";
+$sql = "SELECT * FROM department";
 $result=$link->query($sql);
 
   while($row=$result->fetch_assoc()){
     ?>
-    
-      
         <div class="col-xl-4 col-md-6 d-flex align-items-stretch mb-5" data-aos="zoom-in" data-aos-delay="100" >
           <div class="icon-box">
             <div class="icon"><?php echo '<img class="img-fluid animated"  style="width:400px;height:200px;" src="data:image/jpeg;base64,'.base64_encode( $row['img project'] ).'" />';?>
-</div>
+            </div>
 <form action='department.php' method='post'><h4 ><input style='background-color:white;border:1px white;color:#37517e;font-weight:bold;' type='submit' name='submit' value='<?php echo $row['title'] ;?>'></h4>
               <input type='hidden' name='id' value='<?php echo $row['id'] ;?>' ></form>
             <p><?php echo $row['description'] ;?></p>
@@ -379,19 +377,19 @@ $result=$link->query($sql);
                 <div class="validate"></div>
               </div>
               <div class="form-group col-md-6">
-                <label for="name">Your Email</label>
-                <input type="email" class="form-control" name="email" id="email" data-rule="email" data-msg="Please enter a valid email" />
+                <label for="email">Your Email</label>
+                <input aria-label="email" type="email" class="form-control" name="email" id="email" data-rule="email" data-msg="Please enter a valid email" />
                 <div class="validate"></div>
               </div>
             </div>
             <div class="form-group">
               <label for="name">Subject</label>
-              <input type="text" class="form-control" name="subject" id="subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+              <input aria-label="name" type="text" class="form-control" name="subject" id="subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
               <div class="validate"></div>
             </div>
             <div class="form-group">
               <label for="name">Message</label>
-              <textarea class="form-control" name="message" rows="10" data-rule="required" data-msg="Please write something for us"></textarea>
+              <textarea aria-label="name" class="form-control" name="message" rows="10" data-rule="required" data-msg="Please write something for us"></textarea>
               <div class="validate"></div>
             </div>
             <div class="mb-3">
@@ -407,7 +405,7 @@ $result=$link->query($sql);
 
     </div>
   </section><!-- End Contact Section -->
-</main><!-- End #main -->
+<!-- End #main -->
 
 <!-- ======= Footer ======= -->
 <footer id="footer">

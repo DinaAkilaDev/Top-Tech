@@ -74,7 +74,7 @@
                     </div>
                     <div class=" content" >
                         <h3>Trainer:</h3>
-                        <h6 > <?php  echo $row['trainercourses'];?></h6>
+                        <h6 > <?php  echo $row['trainer courses'];?></h6>
                     </div>
                     <div class=" content" >
                         <h3 >Duration:</h3>
